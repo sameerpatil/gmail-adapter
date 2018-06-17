@@ -7,6 +7,8 @@ import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
@@ -26,6 +28,8 @@ import com.google.api.services.gmail.GmailScopes;
 
 @Component
 public class GmailInitializer {
+	
+	private static final Logger logger = LoggerFactory.getLogger(GmailInitializer.class);
     private static final String APPLICATION_NAME = "KuberBot";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String CREDENTIALS_FOLDER = "credentials"; // Directory to store user credentials.

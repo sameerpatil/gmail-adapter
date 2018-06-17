@@ -3,6 +3,8 @@ package com.janmudra.gmail;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,11 +17,12 @@ import com.google.api.services.gmail.Gmail;
 @EnableScheduling
 public class KuberGmailAdapterApplication {
 	
+	private static final Logger logger = LoggerFactory.getLogger(KuberGmailAdapterApplication.class);
 	@Autowired 
 	GmailInitializer initializer;
 	public static void main(String[] args) {
 		SpringApplication.run(KuberGmailAdapterApplication.class, args);
-	
+	logger.info("Gmail Adapter is up and running");
 	}
 
 	@Bean
